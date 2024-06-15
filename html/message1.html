@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="message.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars"></i>
+        </label>
+
+        <label class="logo">MoneyX</label>
+        <ul>
+            <li><a href="section1.html">Back</a></li>
+            <li><a class="active" href="home.html">Logout</a></li>
+        </ul>
+        <hr>
+    </nav>
+
+    <div id="container">
+        <form onsubmit="return validateForm()" method="post" action="multiplemail1.php">
+            <h2>UPLOAD FORM</h2>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" autocomplete="off" required>
+
+            <label for="name">NAME</label>
+            <input type="text" id="name" name="name" autocomplete="off" required>
+
+            <label for="phone">PHONE</label>
+            <input type="text" id="phone" name="phone" autocomplete="off" required>
+
+            <label for="message">MESSAGE</label>
+            <textarea id="message" name="message" placeholder="Write something..." autocomplete="off" style="height:100px"></textarea>
+
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button><br>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var message = document.getElementById("message").value;
+            var emailPattern = /^[a-zA-Z0-9]+@rguktong\.ac\.in$/;
+
+            if (email === "" || !email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            if (name === "") {
+                alert("Name is required.");
+                return false;
+            }
+            if (name.length < 2 || name.length > 20) {
+                alert("Name length must be between 2 and 20 characters.");
+                return false;
+            }
+
+            if (!isNaN(name)) {
+                alert("Name must contain only characters.");
+                return false;
+            }
+
+            if (phone === "") {
+                alert("Phone is required.");
+                return false;
+            }
+
+            if (isNaN(phone)) {
+                alert("Phone must contain only digits.");
+                return false;
+            }
+
+            if (phone.length !== 10) {
+                alert("Phone number must be exactly 10 digits.");
+                return false;
+            }
+
+            if (message === "") {
+                alert("Message is required.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

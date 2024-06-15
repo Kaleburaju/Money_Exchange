@@ -1,0 +1,235 @@
+
+*{
+    padding:0;
+    margin: 0;
+    text-decoration:none;
+    list-style:none;
+    
+    }
+    
+    body{
+    font-family: montserrat; 
+    }
+    
+    nav{
+    background:linear-gradient(109.6deg,rgb(6,2,2)32.4%,rgb(221, 32, 54)98.8%);
+    height:90px;
+    width:100%;
+    position: relative; 
+    z-index: 1;
+    }
+    hr {
+  margin: 0;
+ border-top:2px solid white;
+  padding: 0;
+  width: 100%;
+  
+ 
+}
+
+
+    label.logo{
+     color: white;
+     font-size:40px;
+     line-height:80px;
+     padding:0 80px;
+     font-weight:bold;
+    
+    }
+    
+    nav ul{
+     float:right;
+     margin-right:20px;
+     
+    }
+    nav ul li{
+     display:inline-block;
+     line-height:80px;
+     margin:0 5px;
+    
+    }
+    
+    nav ul li a{
+    
+    color:white;
+    font-size:17px;
+    padding:7px 13px;
+    border-radius:15px;
+    text-transform:uppercase;
+    
+    }
+    
+    a.active,a:hover{
+    background:black;
+    transition: .5s;
+    
+    }
+    .checkbtn{
+     font-size: 30px;
+     color: white;
+     float: right;
+     line-height: 80px;
+     margin-right: 40px;
+     margin-top:20px;
+     cursor: pointer;
+     display: none;
+    }
+    #check{
+    display: none;
+    
+    }
+    @media (max-width:896px) {
+       label.logo{
+         font-size: 30px;
+         padding-left: 50px;
+    
+       } 
+       nav ul li a{
+        font-size: 16px;
+    
+       }
+    }
+    
+    
+
+
+       @media (max-width:896px){
+        .checkbtn{
+            display: block;
+        }
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background:black;
+            top:80px;
+           left: -100%;
+    
+            text-align: center;
+           transition: all .5s;
+    
+        }
+        nav ul li{
+            display: block;
+            margin: 50px 0;
+            line-height: 30px;
+        }
+        nav ul li{
+            font-size: 20px;
+    
+        }
+        a:hover,a.active{
+            background:none;
+            color: #fd1c03;
+        }
+        #check:checked ~ ul
+        {
+
+         left: 0;
+       
+        }
+         #check:checked ~ .hero {
+    display: none;}
+    
+      
+     }
+  
+
+   body {
+      background-color: black;
+      background-image: url("1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed; 
+    }
+div {
+   
+    text-align: center;
+    margin-top: 10px;
+     
+  }
+  #container{
+    
+    width: 300px;
+    position: relative;
+    left: 33%;
+    top: 14%;
+    border-radius: 80%;
+    
+  }
+
+  form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    
+  }
+  
+ 
+  div form h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+
+  div form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 200px;
+     font-size: 20px;
+   
+  }
+  
+  div form input[type="text"],
+  div form input[type="email"],
+  div form input[type="password"],
+  div form input[type="phone_no"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+
+  div form button[name="Register"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+
+  div form button[name="Register"]:hover {
+    background-color: #0056b3;
+  }
+@media (max-width: 768px) {
+  #container {
+    width: 80%; 
+    left: 10%; 
+    top: 17%; 
+    border-radius: 5%;
+    background-color:white; 
+  }
+   
+
+  form {
+    width: 90%; 
+  }
+
+  div form label {
+    width: 100%; 
+  }
+}

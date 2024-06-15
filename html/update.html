@@ -1,0 +1,89 @@
+
+<html>
+<head>
+<title>Responsive navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="forgot.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<body>
+     
+ <div id="container">
+        <form onsubmit="return validateForm()" method="post" action="update.php">
+
+
+            <h2>Update password</h2><br>
+            <div class="form-group">
+                <label >id:</label>
+                 <input type="text" id="id" name="id" class="form-control" autocomplete="off">
+                  <span id="number" class="text-danger font-weight-bold"></span>
+               </div>
+        
+            <div class="form-group">
+                <label  for="password"> new password:</label>
+                 <input type="password" id="pass" name="pass" class="form-control" autocomplete="off">
+                 <span id="passwords" class="text-danger font-weight-bold"></span>
+            </div>
+    
+                <div class="form-group">
+       <label  for="cpassword"> confirm password:</label>
+        <input type="cpassword" id="cpass" name="cpass" class="form-control" autocomplete="off">
+        <span id="cpasswords" class="text-danger font-weight-bold"></span>
+      </div>
+            <button type="submit" name="Register" class="btn btn-primary">Change password</button><br><br>
+           
+        </form>
+    </div>
+     <script>
+    function validateForm() {
+    
+        document.getElementById("id").innerHTML = "";
+        document.getElementById("passwords").innerHTML = "";
+        document.getElementById("cpasswords").innerHTML = "";
+       
+        var id = document.getElementById("id").value;
+        var password = document.getElementById("pass").value;
+        var cpassword = document.getElementById("cpass").value;
+
+
+
+        if (id === "") {
+            document.getElementById("number").innerHTML = "**ID is required.";
+            return false;
+        }
+        if ((id.length <= 6) || (id.length > 7)) {
+            document.getElementById("number").innerHTML = "**Length must be 7";
+            return false;
+        }
+        if (id.charAt(0) !== 'O') {
+    document.getElementById("number").innerHTML = "** Enter valid Id starting with capital 'O'";
+    return false;
+      }
+        
+        if (password === "") {
+            document.getElementById("passwords").innerHTML = "**Password is required.";
+            return false;
+        }
+        if (cpassword === "") {
+            document.getElementById("cpasswords").innerHTML = "**Password is required.";
+            return false;
+        }
+         
+        if (password !=cpassword) {
+            document.getElementById("passwords").innerHTML = "**Password are not matching.";
+            return false;
+        }
+       
+    }
+</script>
+
+    
+</body>
+</html>

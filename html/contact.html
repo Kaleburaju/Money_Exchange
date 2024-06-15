@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<style>
+.split
+{
+	height:100%;
+	width:55%;
+	position:fixed;
+}
+.left
+{
+	left:0;
+	background-color:blue;
+}
+.right
+{
+	right:0;
+	background-color:white;
+}
+h2
+{
+	color:white;
+	padding:50px 170px;
+}
+.details
+{
+	margin-left:90px;
+	color:white;
+}
+p{margin-top:50px;}
+form
+{
+	margin-left:40px;
+}
+input
+{
+	width:600px;
+	height:40px;
+	margin:40px auto;
+	display:inline-block;
+}
+button
+{
+	margin-top:45px;
+	margin-left:250px;
+	width:100px;
+	height:30px;
+	background-color:blue;
+	color:white;
+	font-size:20px;
+	border-radius:10px;
+}
+</style>
+</head>
+<body>
+	<div class="split left">
+		<h2>CONTACT-US</h2>
+		<div class="details">
+			<p>SK.Sana Haseena-o190713@rguktong.ac.in</p>
+			<p>A.Dhanalakshmi  -o190763@rguktong.ac.in</p>
+			<p>P.Kavyasri   -o190750@rguktong.ac.in</p>
+			<p>Satish   -o190537@rguktong.ac.in</p>
+			<p>Sai Kumar Naik  -o190855@rguktong.ac.in</p>
+			
+		</div>
+	</div>
+	<div class="split right">
+	<div class="login">
+	<form method="post" action="email.php">
+		<input type="text" placeholder="enter your name" name="name" required oninvalid="this.setCustomValidity('please enter your name with atleast 3 characters')" oninput="this.setCustomValidity('')"  maxlength="20" minlength="3"><br>
+		<!--<input type="text" placeholder="enter mobile number" name="phone" required oninvalid="this.setCustomValidity('please enter your mobile number which should contain 10 digits')" oninput="this.setCustomValidity('')"  pattern="[6-9]{1}[0-9]{9}" ><br>-->
+		<input type="email" placeholder="enter email address" name="email" required oninvalid="this.setCustomValidity('please enter correct clg email id')" oninput="this.setCustomValidity('')" 
+		pattern="[oO]{1}[0-9]{6}@rguktong\.ac\.in"><br>
+		<input type="text" placeholder="enter subject" name="subject" required oninvalid="this.setCustomValidity('enter subject using atleast 5 characters')" oninput="this.setCustomValidity('')" minlength="5" maxlength="30"><br>
+		<textarea rows="5" columns="50" style="width:600px;margin-top:30px;" placeholder="enter your message" name="message" required oninvalid="this.setCustomValidity('describe your message use atleast 10 characters')" oninput="this.setCustomValidity('')" minlength="10" maxlength="150"></textarea><br>
+	<button type="submit" >submit</button>
+	
+	</form>
+	</div>
+	</div>
+</body>
+</html>

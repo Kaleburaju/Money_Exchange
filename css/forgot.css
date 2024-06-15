@@ -1,0 +1,99 @@
+
+    
+
+    body {
+        background-color: black;
+        background-image: url("4.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; 
+      }
+  div {
+     
+      text-align: center;
+      margin-top: 10px;
+       
+    }
+    #container{
+      background: transparent;
+      width: 300px;
+      position: relative;
+      left: 33%;
+      top: 24%;
+      border-radius: 80%;
+    }
+  
+    form {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #f9f9f9;
+      
+    }
+    
+   
+    div form h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    
+  
+    div form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+      width: 200px;
+       font-size: 20px;
+     
+    }
+    
+    div form input[type="text"],
+    div form input[type="email"],
+    div form input[type="password"],
+    div form input[type="phone_no"]{
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+    
+  
+    div form button[name="Register"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: #fff;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+  
+    div form button[name="Register"]:hover {
+      background-color: #0056b3;
+    }
+  @media (max-width: 768px) {
+    #container {
+      width: 80%; 
+      left: 10%; 
+      top: 35%; 
+      border-radius: 5%; 
+    }
+     
+  
+    form {
+      width: 90%; 
+    }
+  
+    div form label {
+      width: 100%; 
+    }
+  }

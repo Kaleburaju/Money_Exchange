@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Responsive navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="signup.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body><nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn" >
+    <i class="fa fa-bars"></i>
+</label>
+
+        <label class="logo">MoneyX</label>
+        <ul>
+            <li><a  href="home.html">Home</a></li>
+            <li><a  href="login.html">Login</a></li>
+            <li><a  class="active" href="#">SIGNUP</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="home.html">Logout</a></li>
+        </ul>
+        <hr>
+    </nav> 
+    
+    <div class="container">
+    
+    <div > 
+    
+   
+    <form onsubmit="return validateForm()" method="post" action="signup.php">
+  
+
+      <h1 >SIGN UP</h1>
+      <div class="form-group">
+       <label >Username:</label>
+        <input type="text" id="username" name="username" class="form-control" autocomplete="off">
+        <span id="user" class="text-danger font-weight-bold"></span>
+      </div>
+
+     <div class="form-group">
+       <label >id:</label>
+        <input type="text" id="id" name="id" class="form-control" autocomplete="off">
+         <span id="number" class="text-danger font-weight-bold"></span>
+      </div>
+    
+    
+     <div class="form-group">
+       <label >email:</label>
+        <input type="text" id="email" name="email" class="form-control" autocomplete="off">
+        <span id="emails" class="text-danger font-weight-bold"></span>
+      </div>
+      
+      
+     <div class="form-group">
+       <label  for="password">password:</label>
+        <input type="password" id="pass" name="pass" class="form-control" autocomplete="off">
+        <span id="passwords" class="text-danger font-weight-bold"></span>
+      </div>
+      
+      
+     <div class="form-group">
+       <label >phone_no:</label>
+        <input type="text" id="phone" name="phone" class="form-control" autocomplete="off">
+        <span id="phones" class="text-danger font-weight-bold"></span>
+      </div>
+         <b>College name:</b>
+               <select  id="cars" name="college_name">
+    			 <option value="RGUKT IIIT-ONGOLE">RGUKT IIIT-ONGOLE</option>
+                 	 <option value="RGUKT IIT -NUZVID">RGUKT IIIT-NUZVID</option>
+                 	<option value="RGUKT IIIT-SRIKAKULAM">RGUKT IIIT-SRIKAKULAM</option>
+                 	<option value="RGUKT IIIT-RK VALLEY">RGUKT IIIT-RK VALLEY</option>
+  		       </select><br><br>
+          <button type="submit" name="Register" class="btn btn-primary">Register</button><br><br>     
+         <b> if you have an account:</b> <a href="login.html">&nbsp;&nbsp;&nbsp;LOGIN</a>
+        </form>
+      </div>
+    </div>
+    
+     <script>
+    function validateForm() {
+       
+        document.getElementById("user").innerHTML = "";
+        document.getElementById("number").innerHTML = "";
+        document.getElementById("emails").innerHTML = "";
+        document.getElementById("passwords").innerHTML = "";
+        document.getElementById("phones").innerHTML = "";
+
+        var username = document.getElementById("username").value;
+        var id = document.getElementById("id").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("pass").value;
+        var phone_no = document.getElementById("phone").value;
+
+        var emailPattern = /^[a-zA-Z0-9]+@rguktong\.ac\.in$/;
+
+        if (username === "") {
+            document.getElementById("user").innerHTML = "**Username is required.";
+            return false;
+        }
+
+        if ((username.length <= 2) || (username.length > 20)) {
+            document.getElementById("user").innerHTML = "**Length must be between 2 & 20";
+            return false;
+        }
+
+        if (!isNaN(username)) {
+            document.getElementById("user").innerHTML = "**Only characters allowed";
+            return false;
+        }
+
+        if (id === "") {
+            document.getElementById("number").innerHTML = "**ID is required.";
+            return false;
+        }
+        if ((id.length <= 6) || (id.length > 7)) {
+            document.getElementById("number").innerHTML = "**Length must be 7";
+            return false;
+        }
+        if (id.charAt(0) !== 'O') {
+            document.getElementById("number").innerHTML = "** Enter valid Id starting with capital 'O'";
+             return false;
+          }
+
+        if (email === "") {
+            document.getElementById("emails").innerHTML = "**Email is required.";
+            return false;
+        }
+
+        if (!emailPattern.test(email)) {
+        document.getElementById("emails").innerHTML = "Invalid email address. It should be in the format o190***@rguktong.ac.in";
+        return false;
+    }
+
+        if (password === "") {
+            document.getElementById("passwords").innerHTML = "**Password is required.";
+            return false;
+        }
+
+        if ((password.length <= 2) || (password.length > 20)) {
+            document.getElementById("passwords").innerHTML = "**Length must be between 2 & 20";
+            return false;
+        }
+
+        if (phone_no === "") {
+            document.getElementById("phones").innerHTML = "**Phone number is required.";
+            return false;
+        }
+
+        if (isNaN(phone_no)) {
+            document.getElementById("phones").innerHTML = "**Only digits allowed";
+            return false;
+        }
+
+        if (phone_no.length != 10) {
+            document.getElementById("phones").innerHTML = "**Number must be 10 digits";
+            return false;
+        }
+    }
+</script>
+
+    
+    
+    
+    
+</body>
+
+</html>
